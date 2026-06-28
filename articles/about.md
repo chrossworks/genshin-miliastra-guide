@@ -9,14 +9,26 @@ published: true
 
 # このサイトについて
 
-このサイトは筆者のChross（[@Chross_isao](https://x.com/Chross_isao)）が原神のゲーム内コンテンツである「星々の幻境」（UGC）のステージ制作について、個人的にまとめたサイトになります。  
+このサイトは筆者のChross（<a  
+href="https://x.com/Chross_isao"  
+target="_blank"  
+rel="noopener noreferrer"  
+>@Chross_isao</a>）が原神のゲーム内コンテンツである「星々の幻境」（UGC）のステージ制作について、個人的にまとめたサイトになります。  
 非公式、かつ、ゲーム開発の経験等がない人にもなるべく分かりやすいような記載を心がけているため、一部、正確ではない記載等が含まれている可能性があります。  
 予めご了承ください。  
 （筆者自身、unity等でのゲーム開発に携わった経験や多少プログラミングをかじった経験はあるものの、プログラミングや開発が本職の人間ではなく、いわゆる企画よりの人間です。）
 
 公式の説明は下記をご参照ください。
-- [星々の幻境チュートリアル動画](https://youtube.com/playlist?list=PLzICTZz2GEQySJVSizn-Cm85uzAuhHlcl&si=orbDF0C1KxSXhIhP)
-- [星々の幻境公式Guide（英語・中国語のみ）](https://act.hoyoverse.com/ys/ugc/tutorial/detail/mhs2w008wf14)
+- <a  
+href="https://youtube.com/playlist?list=PLzICTZz2GEQySJVSizn-Cm85uzAuhHlcl&si=orbDF0C1KxSXhIhP"  
+target="_blank"  
+rel="noopener noreferrer"  
+>星々の幻境チュートリアル動画</a>
+- <a  
+href="https://act.hoyoverse.com/ys/ugc/tutorial/detail/mhs2w008wf14"  
+target="_blank"  
+rel="noopener noreferrer"  
+>星々の幻境公式Guide（英語・中国語のみ）</a>
 - 公式幻境クリエイターDiscordサーバー（公式のイベント案内等に記載があります）
 
 このサイトでは、基本的な操作方法から、基礎用語や制作の考え方、実例を交えた制作方法の紹介等をしていきます。  
