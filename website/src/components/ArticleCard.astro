@@ -1,11 +1,11 @@
 ---
 const { article } = Astro.props;
-
+const base = import.meta.env.BASE_URL;
 const slug = article.id.replace(/\/index$/, "");
 ---
 
 <article class="article-card">
-  <a class="article-card-link" href={`/${slug}`}>
+  <a class="article-card-link" href={`${base}${slug}`}>
     <h3>{article.data.title}</h3>
     <p>{article.data.description}</p>
 

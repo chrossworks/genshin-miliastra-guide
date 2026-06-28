@@ -6,7 +6,7 @@ import ArticleCard from "../components/ArticleCard.astro";
 const articles = await getCollection("articles", ({ data }) => {
   return data.published !== false;
 });
-
+const base = import.meta.env.BASE_URL;
 const latestArticles = articles.slice(0, 5);
 ---
 
@@ -28,18 +28,18 @@ const latestArticles = articles.slice(0, 5);
     <p>現在、少しずつ制作中です。</p>
 
     <div class="hero-actions">
-        <a class="button" href="/beginner">制作を始める</a>
-        <a class="button button-secondary" href="/about">このサイトについて</a>
+        <a class="button" href={`${base}beginner`}>制作を始める</a>
+        <a class="button button-secondary" href={`${base}about`}>このサイトについて</a>
     </div>
     </section>
 
     <section>
       <h2>まずはこちら</h2>
       <ul>
-        <li><a href="/about">このサイトについて</a></li>
-        <li><a href="/about_miliastra">星々の幻境とは</a></li>
-        <li><a href="/beginner">これから制作する方へ</a></li>
-        <li><a href="/features">機能説明</a></li>
+        <li><a href={`${base}about`}>このサイトについて</a></li>
+        <li><a href={`${base}about_miliastra`}>星々の幻境とは</a></li>
+        <li><a href={`${base}beginner`}>これから制作する方へ</a></li>
+        <li><a href={`${base}features`}>機能説明</a></li>
       </ul>
     </section>
 
