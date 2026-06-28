@@ -1,19 +1,24 @@
 import { defineConfig } from "astro/config";
-import rehypeExternalLinks from 'rehype-external-links';
+import rehypeExternalLinks from "rehype-external-links";
+import remarkDirective from "remark-directive";
+import remarkTweetEmbed from "./src/plugins/remarkTweetEmbed.mjs";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://chrossworks.github.io",
-  base: "/genshin-miliastra-guide",
+  base: "/genshin-miliastra-guide/",
   markdown: {
-    rehypePlugins: [
-    [
-      rehypeExternalLinks,
-      {
-        target: '_blank',
-        rel: ['noopener', 'noreferrer'],
-      },
+    remarkPlugins: [
+      remarkDirective,
+      remarkTweetEmbed,
     ],
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          target: "_blank",
+          rel: ["noopener", "noreferrer"],
+        },
+      ],
     ],
   },
 });

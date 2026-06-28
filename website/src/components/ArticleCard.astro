@@ -5,7 +5,7 @@ const slug = article.id.replace(/\/index$/, "");
 ---
 
 <article class="article-card">
-  <a class="article-card-link" href={`${base}/${slug}`}>
+  <a class="article-card-link" href={`${base}${slug}`}>
     <h3>{article.data.title}</h3>
     <p>{article.data.description}</p>
 
