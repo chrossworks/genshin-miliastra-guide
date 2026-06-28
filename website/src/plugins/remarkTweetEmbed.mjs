@@ -8,10 +8,12 @@ export default function remarkTweetEmbed() {
       const url = node.attributes?.url;
       if (!url) return;
 
+      const embedUrl = url.replace("https://x.com/", "https://twitter.com/");
+
       node.type = "html";
       node.value = `
 <blockquote class="twitter-tweet">
-  <a href="${url}"></a>
+  <a href="${embedUrl}">Xのポストを見る</a>
 </blockquote>
 `;
     });
