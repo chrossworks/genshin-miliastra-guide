@@ -1,8 +1,9 @@
 ---
 title: 星々の幻境とは
 description: そもそも星々の幻境とはどんなものか、について説明しています
-category:
+category: about
 tags:
+  - 星々の幻境について
 published: true
 updated:
 ---
