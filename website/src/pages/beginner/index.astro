@@ -1,19 +1,22 @@
 ---
 import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
 
-const posts = await getCollection("posts", ({ data }) => {
-  return data.category === "beginner";
+const posts = await getCollection("articles", ({ data }) => {
+  return data.category === "beginner" && data.published === true;
 });
 ---
 
-<h1>これから制作する方へ</h1>
+<Layout title="これから制作する方へ">
+  <h1>これから制作する方へ</h1>
 
-<ul>
-  {posts.map((post) => (
-    <li>
-      <a href={`${import.meta.env.BASE_URL}${post.slug}/`}>
-        {post.data.title}
-      </a>
-    </li>
-  ))}
-</ul>
+  <ul>
+    {posts.map((post) => (
+      <li>
+        <a href={`${import.meta.env.BASE_URL}${post.id}/`}>
+          {post.data.title}
+        </a>
+      </li>
+    ))}
+  </ul>
+</Layout>
