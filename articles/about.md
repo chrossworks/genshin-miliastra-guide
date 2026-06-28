@@ -1,6 +1,6 @@
 ---
 title: このサイトについて
-description: 星々の幻境　自己流制作マニュアルについて
+description: 【原神】星々の幻境 自己流制作マニュアルについて
 category: about
 tags:
   - サイト情報
