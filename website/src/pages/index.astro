@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import ArticleCard from "../components/ArticleCard.astro";
 
 const articles = await getCollection("articles", ({ data }) => {
   return data.published !== false;
@@ -48,18 +49,11 @@ const latestArticles = articles.slice(0, 5);
     <h2>新着記事</h2>
 
     {latestArticles.length > 0 ? (
-        <ul>
-        {latestArticles.map((article) => {
-            const slug = article.id.replace(/\/index$/, "");
-
-            return (
-            <li>
-                <a href={`/${slug}`}>{article.data.title}</a>
-                <p>{article.data.description}</p>
-            </li>
-            );
-        })}
-        </ul>
+        <div class="article-grid">
+        {latestArticles.map((article) => (
+            <ArticleCard article={article} />
+        ))}
+        </div>
     ) : (
         <p>記事はまだありません。</p>
     )}

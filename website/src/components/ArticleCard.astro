@@ -1,0 +1,18 @@
+---
+const { article } = Astro.props;
+
+const slug = article.id.replace(/\/index$/, "");
+---
+
+<article class="article-card">
+  <a class="article-card-link" href={`/${slug}`}>
+    <h3>{article.data.title}</h3>
+    <p>{article.data.description}</p>
+
+    {article.data.tags?.length > 0 && (
+      <ul class="tag-list">
+        {article.data.tags.map((tag) => <li>{tag}</li>)}
+      </ul>
+    )}
+  </a>
+</article>
