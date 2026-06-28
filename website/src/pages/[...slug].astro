@@ -20,6 +20,8 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { Content } = await render(article);
+const SITE_NAME = "Genshin Miliastra Guide";
+const pageTitle = `${article.data.title} | ${SITE_NAME}`;
 
 const relatedArticles = await getCollection("articles", ({ data }) => {
   return (
@@ -33,7 +35,10 @@ const filteredRelatedArticles = relatedArticles.filter((relatedArticle) => {
 });
 ---
 
-<Layout title={article.data.title} description={article.data.description}>
+<Layout
+  title={pageTitle}
+  description={article.data.description}
+>
   <main class="article-page">
     <Content />
 
