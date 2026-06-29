@@ -5,7 +5,7 @@ category: beginner
 tags:
   - 初心者向け
 published: true
-updated:
+updated: 2026-06-29
 ---
 
 # 制作の進め方のススメ

@@ -1,11 +1,11 @@
 ---
 title: 大まかな制作の流れ
-description: 星々の幻境での大まかな制作の流れについて記載しています。
+description: 星々の幻境での大まかな制作の流れについて記載しています
 category: beginner
 tags:
   - 初心者向け
 published: true
-updated:
+updated: 2026-06-29
 ---
 
 # 大まかな制作の流れ
