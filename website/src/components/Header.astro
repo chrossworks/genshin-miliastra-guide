@@ -11,6 +11,29 @@ const base = import.meta.env.BASE_URL;
       <a href={`${base}about_miliastra`}>星々の幻境とは</a>
       <a href={`${base}beginner`}>これから制作する方へ</a>
 <!--       <a href={`${base}features`}>機能説明</a> -->
+      <div class="header-search">
+        <div id="header-search"></div>
+      </div>
+
+      <link
+        rel="stylesheet"
+        href="/genshin-miliastra-guide/pagefind/pagefind-ui.css"
+      />
+
+      <script
+        is:inline
+        src="/genshin-miliastra-guide/pagefind/pagefind-ui.js"
+      ></script>
+
+      <script is:inline>
+        window.addEventListener("DOMContentLoaded", () => {
+          new PagefindUI({
+            element: "#header-search",
+            showSubResults: true,
+            showImages: false,
+          });
+        });
+      </script>
     </nav>
   </div>
 </header>
@@ -24,6 +47,28 @@ const base = import.meta.env.BASE_URL;
   .header-inner {
     max-width: 960px;
     margin: 0 auto;
+  }
+
+  .header-search {
+    width: 240px;
+  }
+
+  .header-search :global(.pagefind-ui__form) {
+    margin: 0;
+  }
+
+  .header-search :global(.pagefind-ui__search-input) {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .header-search :global(.pagefind-ui__results-area) {
+    position: absolute;
+    z-index: 1000;
+    width: 360px;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: white;
   }
 
   .site-title {
