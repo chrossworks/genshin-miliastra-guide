@@ -53,22 +53,30 @@ const base = import.meta.env.BASE_URL;
     width: 240px;
   }
 
-  .header-search :global(.pagefind-ui__form) {
+  /* 検索フォーム */
+  .header-search .pagefind-ui__search-input {
+    height: 40px;
+    font-size: 14px;
+    padding-left: 2.4rem;
+  }
+
+  /* 虫眼鏡アイコン */
+  .header-search .pagefind-ui__search-clear,
+  .header-search .pagefind-ui__search-icon {
+    transform: scale(0.8);
+  }
+
+  /* 検索ボックス全体 */
+  .header-search .pagefind-ui__form {
     margin: 0;
   }
 
-  .header-search :global(.pagefind-ui__search-input) {
-    font-size: 0.9rem;
-    padding: 0.5rem 0.75rem;
-  }
-
-  .header-search :global(.pagefind-ui__results-area) {
+  /* 結果ウィンドウ */
+  .header-search .pagefind-ui__drawer {
     position: absolute;
+    width: 420px;
+    right: 0;
     z-index: 1000;
-    width: 360px;
-    max-height: 70vh;
-    overflow-y: auto;
-    background: white;
   }
 
   .site-title {
