@@ -5,11 +5,14 @@
   href="/genshin-miliastra-guide/pagefind/pagefind-ui.css"
 />
 
-<script is:inline>
-  window.addEventListener("DOMContentLoaded", async () => {
-    const pagefind = await import("/genshin-miliastra-guide/pagefind/pagefind-ui.js");
+<script
+  is:inline
+  src="/genshin-miliastra-guide/pagefind/pagefind-ui.js"
+></script>
 
-    new pagefind.PagefindUI({
+<script is:inline>
+  window.addEventListener("DOMContentLoaded", () => {
+    new PagefindUI({
       element: "#search",
     });
   });
