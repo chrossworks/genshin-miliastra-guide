@@ -2,12 +2,12 @@
 
 <link
   rel="stylesheet"
-  href={`${import.meta.env.BASE_URL}pagefind/pagefind-ui.css`}
+  href="/genshin-miliastra-guide/pagefind/pagefind-ui.css"
 />
 
 <script is:inline>
   window.addEventListener("DOMContentLoaded", async () => {
-    const pagefind = await import(`${import.meta.env.BASE_URL}pagefind/pagefind-ui.js`);
+    const pagefind = await import("/genshin-miliastra-guide/pagefind/pagefind-ui.js");
 
     new pagefind.PagefindUI({
       element: "#search",
