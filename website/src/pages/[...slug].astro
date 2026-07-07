@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import { getCollection, render } from "astro:content";
+import Breadcrumb from "../components/Breadcrumb.astro";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles", ({ data }) => {
@@ -40,6 +41,22 @@ const filteredRelatedArticles = relatedArticles.filter((relatedArticle) => {
   description={article.data.description}
 >
   <main class="article-page">
+    <Breadcrumb
+      items={[
+        {
+          label: article.data.categoryLabel,
+          href: article.data.category,
+        },
+        article.data.sectionLabel && {
+          label: article.data.sectionLabel,
+          href: article.data.section,
+        },
+        {
+          label: article.data.title,
+        },
+      ].filter(Boolean)}
+    />
+
     <Content />
 
     {filteredRelatedArticles.length > 0 && (
