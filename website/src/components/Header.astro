@@ -100,15 +100,22 @@ const navItems = [
     margin: 0;
   }
 
+  /* 検索フォームの縦位置調整 */
   .header-search :global(.pagefind-ui__search-input) {
     height: 40px;
     font-size: 14px;
     padding-left: 2.4rem;
+    line-height: 40px;
   }
 
-  .header-search :global(.pagefind-ui__search-clear),
   .header-search :global(.pagefind-ui__search-icon) {
-    transform: scale(0.8);
+    top: 50%;
+    transform: translateY(-50%) scale(0.8);
+  }
+
+  .header-search :global(.pagefind-ui__search-clear) {
+    top: 50%;
+    transform: translateY(-50%) scale(0.8);
   }
 
   /* 検索結果をヘッダー内ではなく、浮かせて表示 */
@@ -153,24 +160,42 @@ const navItems = [
     }
 
     .site-title {
-      font-size: 15px;
+      width: 100%;
+      font-size: 16px;
+      white-space: normal;
     }
 
     .header-search {
-      width: 160px;
+      order: 2;
+      width: 100%;
+      margin-left: 0;
     }
 
-    .header-search :global(.pagefind-ui__drawer) {
-    width: min(90vw, 360px);
-    right: 0;
+    .site-nav {
+      order: 3;
+      width: 100%;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+    }
+
+    .site-nav::-webkit-scrollbar {
+      display: none;
     }
 
     .site-nav a {
-      font-size: 13px;
+      font-size: 14px;
+      flex-shrink: 0;
     }
 
-    .header-search .pagefind-ui__drawer {
-      width: min(90vw, 360px);
+    .header-search :global(.pagefind-ui__drawer) {
+      position: fixed;
+      top: 170px;
+      left: 16px;
+      right: 16px;
+      width: auto;
+      max-height: 60vh;
+      overflow-y: auto;
     }
   }
 </style>
