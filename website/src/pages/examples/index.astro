@@ -12,12 +12,12 @@ const articles = await getCollection("articles", ({ data }) => {
   <main class="page-container">
     <h1>制作実例紹介</h1>
 
+    <p>筆者が実際に制作した幻境の作り方の紹介等を記載していきます。<br>現在鋭意制作中ですので、今しばらくお待ちください。</p>
     <div class="article-grid">
       {articles.map((article) => (
         <ArticleCard article={article} />
       ))}
     </div>
-    <p>筆者が実際に制作した幻境の作り方の紹介等を記載していきます。<br>現在鋭意制作中ですので、今しばらくお待ちください。</p>
   </main>
 </Layout>
 
