@@ -24,6 +24,44 @@ const { Content } = await render(article);
 const SITE_NAME = "Genshin Miliastra Guide";
 const pageTitle = `${article.data.title} | ${SITE_NAME}`;
 
+const breadcrumbLabelMap = {
+  about: "このサイトについて",
+  about_miliastra: "星々の幻境について",
+
+  beginner: "初心者",
+  learn: "知識から学ぶ",
+  build: "作りながら学ぶ",
+
+  features: "機能説明",
+  terrain: "地形制作",
+  environment: "環境設定",
+  entity: "エンティティの配置",
+  prefab: "プレハブ制作",
+  common_components: "共通コンポーネント",
+  node_graph: "ノードグラフ制作",
+
+  faq: "FAQ",
+  examples: "制作実例",
+  updates: "アップデート",
+  columns: "コラム",
+};
+
+const slug = article.id.replace(/\/index$/, "");
+const slugParts = slug.split("/");
+
+const breadcrumbItems = slugParts.slice(0, -1).map((part, index) => {
+  const href = slugParts.slice(0, index + 1).join("/");
+
+  return {
+    label: breadcrumbLabelMap[part] ?? part,
+    href,
+  };
+});
+
+breadcrumbItems.push({
+  label: article.data.title,
+});
+
 const relatedArticles = await getCollection("articles", ({ data }) => {
   return (
     data.published !== false &&
@@ -41,7 +79,7 @@ const filteredRelatedArticles = relatedArticles.filter((relatedArticle) => {
   description={article.data.description}
 >
   <main class="article-page">
-    <Breadcrumb items={article.data.breadcrumbs ?? [{ label: article.data.title }]} />
+    <Breadcrumb items={breadcrumbItems} />
 
     <Content />
 
