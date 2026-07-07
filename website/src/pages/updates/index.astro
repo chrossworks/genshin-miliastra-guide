@@ -8,14 +8,14 @@ const articles = await getCollection("articles", ({ data }) => {
   return data.category === "beginner" && data.published === true;
 });
 ---
-<Breadcrumb
-  items={[
-    { label: "初心者" },
-  ]}
-/>
 
 <Layout title="アップデート内容">
   <main class="page-container">
+    <Breadcrumb
+      items={[
+        { label: "初心者" },
+      ]}
+    />
     <h1>アップデート内容</h1>
 
     <p>アップデートによって追加された機能等について記載していきます。<br>現在鋭意制作中ですので、今しばらくお待ちください。</p>
