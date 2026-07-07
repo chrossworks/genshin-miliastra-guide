@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import { getCollection, render } from "astro:content";
 import Breadcrumb from "../components/Breadcrumb.astro";
-import { breadcrumbLabelMap, articleOrder } from "../lib/navigation";
+import { breadcrumbLabelMap, articleSeries } from "../lib/navigation";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles", ({ data }) => {
@@ -54,14 +54,24 @@ const filteredRelatedArticles = relatedArticles.filter((relatedArticle) => {
 });
 
 const currentSlug = article.id.replace(/\/index$/, "");
-const currentIndex = articleOrder.indexOf(currentSlug);
+const currentSeries = Object.values(articleSeries).find((series) =>
+  series.articles.includes(currentSlug)
+);
 
-const prevSlug = currentIndex > 0 ? articleOrder[currentIndex - 1] : null;
-const nextSlug =
-  currentIndex >= 0 && currentIndex < articleOrder.length - 1
-    ? articleOrder[currentIndex + 1]
+const currentIndex = currentSeries
+  ? currentSeries.articles.indexOf(currentSlug)
+  : -1;
+
+const prevSlug =
+  currentSeries && currentIndex > 0
+    ? currentSeries.articles[currentIndex - 1]
     : null;
 
+const nextSlug =
+  currentSeries && currentIndex < currentSeries.articles.length - 1
+    ? currentSeries.articles[currentIndex + 1]
+    : null;
+        
 const allArticles = await getCollection("articles", ({ data }) => {
   return data.published !== false;
 });

@@ -42,16 +42,29 @@ export const breadcrumbLabelMap: Record<string, string> = {
   columns: "コラム",
 };
 
-export const articleOrder = [
-  "beginner/general-flow",
-  "beginner/basic-knowledge",
-  "beginner/build/tutorial-miliastra",
-  "beginner/build/coin",
-  "beginner/build/score",
-  "beginner/build/terrain",
-  "beginner/build/object",
-  "beginner/build/clear-system",
-  "beginner/build/timer",
-  "beginner/build/ui",
-  "beginner/build/settings",
-];
+export const articleSeries = {
+    "beginner":{
+        title: "初心者向け",
+
+        articles: [
+          "beginner/general-flow",
+          "beginner/basic-knowledge",
+        ],
+    },
+
+    "beginner-build":{
+        title: "作りながら学ぶ",
+
+        articles: [
+        "beginner/build/tutorial-miliastra",
+        "beginner/build/coin",
+        "beginner/build/score",
+        "beginner/build/terrain",
+        "beginner/build/object",
+        "beginner/build/clear-system",
+        "beginner/build/timer",
+        "beginner/build/ui",
+        "beginner/build/settings",
+        ],
+    },
+};
