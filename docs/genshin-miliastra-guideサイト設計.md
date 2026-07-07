@@ -67,13 +67,13 @@ URL：https://chrossworks.github.io/genshin-miliastra-guide/
 - アップデート内容
 	- Luna Ⅷ（7/1）
 	- etc
-- コラム
+- 制作ノウハウ
 	- 幻境のアイデアの出し方
 	- 幻境を多くの人に遊んでもらうには
 
 # URL
 /
-/about_site
+/about
 /about_miliastra
 /about_miliastra/miliastra
 /about_miliastra/creator_level
@@ -85,8 +85,10 @@ URL：https://chrossworks.github.io/genshin-miliastra-guide/
 /beginner/build/tutorial_miliastra
 /beginner/build/coin
 /beginner/build/score
+/faq
+/examples
 # articles/のフォルダ構成
-about_site.md
+about.md
 about_miliastra/miliastra.md
 about_miliastra/creator_level.md
 beginner/learn/general_flow.md
@@ -111,6 +113,10 @@ beginner/build/score.md
 - Search
 
 # 将来追加したい機能
+- パンくずリスト
+- 前後の記事
+- 関連記事
+- 更新日表示
 - 記事上部に記事の目次とページ内リンクの配置
 　（全記事ではなく、長い記事のみ）
 - アクセス解析
