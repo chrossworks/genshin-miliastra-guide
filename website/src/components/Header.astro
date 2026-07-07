@@ -1,77 +1,115 @@
 ---
 const base = import.meta.env.BASE_URL;
+
+const navItems = [
+  { label: "TOP", href: base },
+  { label: "初心者", href: `${base}beginner` },
+  { label: "機能説明", href: `${base}features` },
+  { label: "FAQ", href: `${base}faq` },
+  { label: "制作実例", href: `${base}examples` },
+  { label: "アップデート", href: `${base}updates` },
+  { label: "このサイトについて", href: `${base}about` },
+];
 ---
 
-<header>
+<header class="site-header">
   <div class="header-inner">
-    <a class="site-title" href={base}>【原神】星々の幻境 自己流制作マニュアル</a>
+    <a class="site-title" href={base}>
+      【原神】星々の幻境 自己流制作マニュアル
+    </a>
 
-    <nav>
-      <a href={`${base}about`}>このサイトについて</a>
-      <a href={`${base}about_miliastra`}>星々の幻境とは</a>
-      <a href={`${base}beginner`}>これから制作する方へ</a>
-<!--       <a href={`${base}features`}>機能説明</a> -->
-      <div class="header-search">
-        <div id="header-search"></div>
-      </div>
-
-      <link
-        rel="stylesheet"
-        href="/genshin-miliastra-guide/pagefind/pagefind-ui.css"
-      />
-
-      <script
-        is:inline
-        src="/genshin-miliastra-guide/pagefind/pagefind-ui.js"
-      ></script>
-
-      <script is:inline>
-        window.addEventListener("DOMContentLoaded", () => {
-          new PagefindUI({
-            element: "#header-search",
-            showSubResults: true,
-            showImages: false,
-          });
-        });
-      </script>
+    <nav class="site-nav" aria-label="メインナビゲーション">
+      {navItems.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
     </nav>
+
+    <div class="header-search">
+      <div id="header-search"></div>
+    </div>
   </div>
+
+  <link rel="stylesheet" href={`${base}pagefind/pagefind-ui.css`} />
+
+  <script is:inline src={`${base}pagefind/pagefind-ui.js`}></script>
+
+  <script is:inline>
+    window.addEventListener("DOMContentLoaded", () => {
+      new PagefindUI({
+        element: "#header-search",
+        showSubResults: true,
+        showImages: false,
+      });
+    });
+  </script>
 </header>
 
 <style>
-  header {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
     border-bottom: 1px solid #ddd;
-    padding: 16px 24px;
   }
 
   .header-inner {
-    max-width: 960px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .site-title {
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    color: inherit;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+
+  .site-nav a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .site-nav a:hover {
+    text-decoration: underline;
   }
 
   .header-search {
+    position: relative;
     width: 240px;
+    flex-shrink: 0;
   }
 
-  /* 検索フォーム */
+  .header-search .pagefind-ui__form {
+    margin: 0;
+  }
+
   .header-search .pagefind-ui__search-input {
     height: 40px;
     font-size: 14px;
     padding-left: 2.4rem;
   }
 
-  /* 虫眼鏡アイコン */
   .header-search .pagefind-ui__search-clear,
   .header-search .pagefind-ui__search-icon {
     transform: scale(0.8);
   }
 
-  /* 検索ボックス全体 */
-  .header-search .pagefind-ui__form {
-    margin: 0;
-  }
-
-  /* 結果ウィンドウ */
   .header-search .pagefind-ui__drawer {
     position: absolute;
     width: 420px;
@@ -79,27 +117,45 @@ const base = import.meta.env.BASE_URL;
     z-index: 1000;
   }
 
-  .site-title {
-    display: inline-block;
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 12px;
-    text-decoration: none;
-    color: inherit;
+  @media (max-width: 900px) {
+    .header-inner {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .site-nav {
+      order: 3;
+      width: 100%;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      padding-bottom: 4px;
+    }
+
+    .header-search {
+      margin-left: auto;
+      width: 200px;
+    }
   }
 
-  nav {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
+  @media (max-width: 600px) {
+    .header-inner {
+      padding: 12px 16px;
+    }
 
-  nav a {
-    color: inherit;
-    text-decoration: none;
-  }
+    .site-title {
+      font-size: 15px;
+    }
 
-  nav a:hover {
-    text-decoration: underline;
+    .header-search {
+      width: 160px;
+    }
+
+    .site-nav a {
+      font-size: 13px;
+    }
+
+    .header-search .pagefind-ui__drawer {
+      width: min(90vw, 360px);
+    }
   }
 </style>
