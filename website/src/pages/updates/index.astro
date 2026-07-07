@@ -2,11 +2,17 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 
 const articles = await getCollection("articles", ({ data }) => {
   return data.category === "beginner" && data.published === true;
 });
 ---
+<Breadcrumb
+  items={[
+    { label: "初心者" },
+  ]}
+/>
 
 <Layout title="アップデート内容">
   <main class="page-container">
