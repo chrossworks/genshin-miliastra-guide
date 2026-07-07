@@ -97,7 +97,7 @@ const nextArticle = nextSlug
 
         <div>
           {nextArticle && (
-            <a class="article-nav-card next" href={`${base}${prevArticle.id.replace(/\/index$/, "")}`}>
+            <a class="article-nav-card next" href={`${base}${nextArticle.id.replace(/\/index$/, "")}`}>
               <span>次の記事</span>
               <strong>{nextArticle.data.title} →</strong>
             </a>

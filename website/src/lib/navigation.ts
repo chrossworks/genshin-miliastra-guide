@@ -43,6 +43,8 @@ export const breadcrumbLabelMap: Record<string, string> = {
 };
 
 export const articleOrder = [
+  "beginner/general-flow",
+  "beginner/basic-knowledge",
   "beginner/build/tutorial-miliastra",
   "beginner/build/coin",
   "beginner/build/score",
