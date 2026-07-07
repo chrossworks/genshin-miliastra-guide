@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
+import { breadcrumbLabelMap } from "../../lib/navigation";
 
 const articles = await getCollection("articles", ({ data }) => {
   return data.category === "beginner" && data.published === true;
@@ -13,7 +14,7 @@ const articles = await getCollection("articles", ({ data }) => {
   <main class="page-container">
     <Breadcrumb
       items={[
-        { label: "アップデート内容" },
+        { label: breadcrumbLabelMap["updates"] },
       ]}
     />
     <h1>アップデート内容</h1>

@@ -1,0 +1,43 @@
+export const breadcrumbLabelMap: Record<string, string> = {
+  about: "このサイトについて",
+
+  beginner: "初心者",
+  learn: "知識から学ぶ",
+  build: "作りながら学ぶ",
+
+  "general-flow": "大まかな制作の流れ",
+  "basic-knowledge": "基礎知識",
+  "operation-guide": "操作方法",
+  "production-flow": "制作の進め方のススメ",
+
+  "tutorial-miliastra": "チュートリアルパルクール",
+  coin: "コインのプレハブを作る",
+  score: "コインでスコアが増える仕組みを作る",
+  terrain: "地形を作る",
+  object: "オブジェクトを配置する",
+  "clear-system": "ステージクリアのシステムを作る",
+  timer: "タイマーを作る",
+  ui: "UIを作る",
+  settings: "細かい設定をする",
+
+  features: "機能説明",
+  environment: "環境設定",
+  entity: "エンティティの配置",
+  prefab: "プレハブ制作",
+  "prefab-library": "プレハブライブラリの基本的な使い方",
+  "object-prefab": "オブジェクトプレハブ制作",
+  "creation-prefab": "創造物プレハブ制作",
+  "common-components": "共通コンポーネント",
+  "custom-variable": "カスタム変数",
+  "effect-playback": "エフェクト再生",
+  "unit-status": "ユニット状態",
+  "option-tab": "オプションタブ",
+  "node-graph": "ノードグラフ制作",
+  "server-node-graph": "サーバーノードグラフ",
+  "client-node-graph": "クライアントノードグラフ",
+
+  faq: "FAQ",
+  examples: "制作実例",
+  updates: "アップデート",
+  columns: "コラム",
+};
