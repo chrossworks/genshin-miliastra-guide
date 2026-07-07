@@ -74,26 +74,26 @@ URL：https://chrossworks.github.io/genshin-miliastra-guide/
 # URL
 /
 /about
-/about_miliastra
-/about_miliastra/miliastra
-/about_miliastra/creator_level
+/about-miliastra
+/about-miliastra/miliastra
+/about-miliastra/creator-level
 /beginner
 /beginner/learn
-/beginner/learn/general_flow
-/beginner/learn/basic_knowledge
+/beginner/learn/general-flow
+/beginner/learn/basic-knowledge
 /beginner/build
-/beginner/build/tutorial_miliastra
+/beginner/build/tutorial-miliastra
 /beginner/build/coin
 /beginner/build/score
 /faq
 /examples
 # articles/のフォルダ構成
 about.md
-about_miliastra/miliastra.md
-about_miliastra/creator_level.md
-beginner/learn/general_flow.md
-beginner/learn/basic_knowledge.md
-beginner/build/tutorial_miliastra.md
+about-miliastra/miliastra.md
+about-miliastra/creator-level.md
+beginner/learn/general-flow.md
+beginner/learn/basic-knowledge.md
+beginner/build/tutorial-miliastra.md
 beginner/build/coin.md
 beginner/build/score.md
 # 各フォルダの役割
