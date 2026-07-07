@@ -95,26 +95,36 @@ const navItems = [
     flex-shrink: 0;
   }
 
-  .header-search .pagefind-ui__form {
+  /* Pagefindの見た目調整 */
+  .header-search :global(.pagefind-ui__form) {
     margin: 0;
   }
 
-  .header-search .pagefind-ui__search-input {
+  .header-search :global(.pagefind-ui__search-input) {
     height: 40px;
     font-size: 14px;
     padding-left: 2.4rem;
   }
 
-  .header-search .pagefind-ui__search-clear,
-  .header-search .pagefind-ui__search-icon {
+  .header-search :global(.pagefind-ui__search-clear),
+  .header-search :global(.pagefind-ui__search-icon) {
     transform: scale(0.8);
   }
 
-  .header-search .pagefind-ui__drawer {
+  /* 検索結果をヘッダー内ではなく、浮かせて表示 */
+  .header-search :global(.pagefind-ui__drawer) {
     position: absolute;
-    width: 420px;
+    top: 48px;
     right: 0;
+    width: 420px;
+    max-height: 70vh;
+    overflow-y: auto;
     z-index: 1000;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   }
 
   @media (max-width: 900px) {
@@ -148,6 +158,11 @@ const navItems = [
 
     .header-search {
       width: 160px;
+    }
+
+    .header-search :global(.pagefind-ui__drawer) {
+    width: min(90vw, 360px);
+    right: 0;
     }
 
     .site-nav a {
