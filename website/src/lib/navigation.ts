@@ -41,3 +41,15 @@ export const breadcrumbLabelMap: Record<string, string> = {
   updates: "アップデート",
   columns: "コラム",
 };
+
+export const articleOrder = [
+  "beginner/build/tutorial-miliastra",
+  "beginner/build/coin",
+  "beginner/build/score",
+  "beginner/build/terrain",
+  "beginner/build/object",
+  "beginner/build/clear-system",
+  "beginner/build/timer",
+  "beginner/build/ui",
+  "beginner/build/settings",
+];
