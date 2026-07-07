@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+
+const articles = await getCollection("articles", ({ data }) => {
+  return data.category === "beginner" && data.published === true;
+});
+---
+
+<Layout title="制作FAQ">
+  <main class="page-container">
+    <h1>制作FAQ</h1>
+
+    <div class="article-grid">
+      {articles.map((article) => (
+        <ArticleCard article={article} />
+      ))}
+    </div>
+    <p>制作にあたってつまずきやすいポイントについての説明等を記載していきます。<br>現在鋭意制作中ですので、今しばらくお待ちください。</p>
+  </main>
+</Layout>
+
+<style>
+  .page-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .article-grid {
+    display: grid;
+    gap: 1rem;
+  }
+</style>
