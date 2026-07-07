@@ -1,7 +1,7 @@
 ---
 title:
 description:
-category: <% tp.file.folder(true).split("/").pop() %>
+category:
 tags: []
 published: false
 updated: <% tp.date.now("YYYY-MM-DD") %>
