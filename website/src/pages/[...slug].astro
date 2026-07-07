@@ -41,21 +41,7 @@ const filteredRelatedArticles = relatedArticles.filter((relatedArticle) => {
   description={article.data.description}
 >
   <main class="article-page">
-    <Breadcrumb
-      items={[
-        {
-          label: article.data.categoryLabel,
-          href: article.data.category,
-        },
-        article.data.sectionLabel && {
-          label: article.data.sectionLabel,
-          href: article.data.section,
-        },
-        {
-          label: article.data.title,
-        },
-      ].filter(Boolean)}
-    />
+    <Breadcrumb items={article.data.breadcrumbs ?? [{ label: article.data.title }]} />
 
     <Content />
 
