@@ -17,7 +17,7 @@ published: true
 公式の説明は下記をご参照ください。
 - [星々の幻境チュートリアル動画](https://youtube.com/playlist?list=PLzICTZz2GEQySJVSizn-Cm85uzAuhHlcl&si=orbDF0C1KxSXhIhP)
 - [星々の幻境公式Guide（英語・中国語のみ）](https://act.hoyoverse.com/ys/ugc/tutorial/detail/mhs2w008wf14)
-- 公式幻境クリエイターDiscordサーバー（公式のイベント案内等に記載があります）
+- [公式幻境クリエイターDiscordサーバー](https://discord.gg/genshinimpactcreator)
 
 このサイトでは、基本的な操作方法から、基礎用語や制作の考え方、実例を交えた制作方法の紹介等をしていきます。  
 ただ、まだサイト制作し始めのため、これからのコンテンツ拡充をいましばらくお待ちください。
