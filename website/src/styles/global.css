@@ -58,6 +58,31 @@ h2 {
   border-bottom: 1px solid var(--color-border);
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  background: var(--color-surface);
+}
+
+th,
+td {
+  border: 1px solid var(--color-border);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #faf7ef;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+tr:nth-child(even) td {
+  background: #fbf8f1;
+}
+
 img,
 video {
   max-width: 100%;
