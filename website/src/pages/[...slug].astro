@@ -20,6 +20,8 @@ export async function getStaticPaths() {
   });
 }
 
+
+
 const { article } = Astro.props;
 const { Content } = await render(article);
 const SITE_NAME = "Genshin Miliastra Guide";
