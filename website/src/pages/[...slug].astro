@@ -42,17 +42,6 @@ breadcrumbItems.push({
   label: article.data.title,
 });
 
-const relatedArticles = await getCollection("articles", ({ data }) => {
-  return (
-    data.published !== false &&
-    data.category === article.data.category
-  );
-});
-
-const filteredRelatedArticles = relatedArticles.filter((relatedArticle) => {
-  return relatedArticle.id !== article.id;
-});
-
 const currentSlug = article.id.replace(/\/index$/, "");
 const currentSeries = Object.values(articleSeries).find((series) =>
   series.articles.includes(currentSlug)
@@ -83,6 +72,15 @@ const prevArticle = prevSlug
 const nextArticle = nextSlug
   ? allArticles.find((item) => item.id.replace(/\/index$/, "") === nextSlug)
   : null;
+
+const currentSeriesArticles = currentSeries
+  ? currentSeries.articles
+      .map((slug) =>
+        allArticles.find((item) => item.id.replace(/\/index$/, "") === slug)
+      )
+      .filter(Boolean)
+  : [];
+
 ---
 
 <Layout
@@ -116,15 +114,28 @@ const nextArticle = nextSlug
       </nav>
     )}
 
-    {filteredRelatedArticles.length > 0 && (
-      <section class="related-articles">
-        <h2>同じカテゴリの記事</h2>
+    {currentSeries && currentSeriesArticles.length > 1 && (
+      <section class="series-articles">
+        <h2>このシリーズの記事</h2>
 
-        <div class="article-grid">
-          {filteredRelatedArticles.map((relatedArticle) => (
-            <ArticleCard article={relatedArticle} />
-          ))}
-        </div>
+        <ol class="series-list">
+          {currentSeriesArticles.map((seriesArticle) => {
+            const seriesSlug = seriesArticle.id.replace(/\/index$/, "");
+            const isCurrent = seriesSlug === currentSlug;
+
+            return (
+              <li class={isCurrent ? "is-current" : ""}>
+                {isCurrent ? (
+                  <span>{seriesArticle.data.title}</span>
+                ) : (
+                  <a href={`${base}${seriesSlug}`}>
+                    {seriesArticle.data.title}
+                  </a>
+                )}
+              </li>
+            );
+          })}
+        </ol>
       </section>
     )}
   </main>
@@ -137,16 +148,35 @@ const nextArticle = nextSlug
     padding: 2rem 1rem;
   }
 
-  .related-articles {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid #ddd;
-  }
+.series-articles {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ddd;
+}
 
-  .article-grid {
-    display: grid;
-    gap: 1rem;
-  }
+.series-articles h2 {
+  margin-bottom: 1rem;
+}
+
+.series-list {
+  display: grid;
+  gap: 0.75rem;
+  padding-left: 1.5rem;
+}
+
+.series-list a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.series-list a:hover {
+  text-decoration: underline;
+}
+
+.series-list .is-current {
+  font-weight: 700;
+  color: #1f3b5c;
+}
 
   .article-nav {
     display: grid;
