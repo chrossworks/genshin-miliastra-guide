@@ -19,19 +19,19 @@ updated: 2026-06-29
 
 ### 1. プレハブ作成画面で配置したいオブジェクトのプレハブを作る
 ※　プレハブについては別途説明しますが、テンプレートのようなものです。
-![プレハブ画面](/genshin-miliastra-guide/images/prefab.png)
+![編集画面](../../assets/images/prefab.png)
 ### 2. 地形配置画面で地形を作りながら、オブジェクトを配置していく
-![地形配置画面](/genshin-miliastra-guide/images/placement.png)
+![編集画面](../../assets/images/placement.png)
 ### 3. キャラ設定画面でキャラに関する設定を行う
-![キャラ画面](/genshin-miliastra-guide/images/character.png)
+![編集画面](../../assets/images/character.png)
 ### 4. ギミックや挙動をノードグラフで作る
-![ノードグラフ](/genshin-miliastra-guide/images/node.png)
+![編集画面](../../assets/images/node.png)
 ### 5. UIを作る
-![UI画面](/genshin-miliastra-guide/images/ui.png)
+![編集画面](../../assets/images/ui.png)
 ### 6. ステージの各種設定を行う
-![ステージ設定画面](/genshin-miliastra-guide/images/settings.png)
+![編集画面](../../assets/images/settings.png)
 ### 7. アップロードする
-![アップロード画面](/genshin-miliastra-guide/images/upload.png)
+![編集画面](../../assets/images/upload.png)
 ### ※　随時テストプレイ
 
 これだけ聞くと、ゲーム開発の経験がない方等は、大変に思えてしまうかもしれません。  
