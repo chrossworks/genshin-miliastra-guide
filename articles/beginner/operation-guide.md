@@ -16,7 +16,7 @@ updated: 2026-07-08
 ### カメラ操作
 
 <video controls playsinline preload="metadata" style="width: 100%; max-width: 960px; border-radius: 12px;">
-  <source src="../../assets/beginner/learn/operation-guide/operation-camera.mp4">
+  <source src="../../assets/videos/beginner/learn/operation-guide/operation-camera.mp4">
 </video>
 
 | 動作        | 操作方法     |
@@ -30,7 +30,7 @@ updated: 2026-07-08
 ### オブジェクト操作
 
 <video controls playsinline preload="metadata" style="width: 100%; max-width: 960px; border-radius: 12px;">
-  <source src="../../assets/beginner/learn/operation-guide/operation-object-placement.mp4">
+  <source src="../../assets/videos/beginner/learn/operation-guide/operation-object-placement.mp4">
 </video>
 
 | 動作          | 操作方法                 |
@@ -42,7 +42,7 @@ updated: 2026-07-08
 ※　オブジェクトを配置する際、**一度地面をクリックしてからオブジェクトを配置すると、y軸0の接地状態で配置することが出来ます。**  
 
 <video controls playsinline preload="metadata" style="width: 100%; max-width: 960px; border-radius: 12px;">
-  <source src="../../assets/beginner/learn/operation-guide/operation-object.mp4">
+  <source src="../../assets/videos/beginner/learn/operation-guide/operation-object.mp4">
 </video>
 オブジェクトを選択した際、変形ツール（変換ツール）が表示され、それを操作することでオブジェクトを簡易的に操作することが可能です。  
 （画面右側の値を変更することによって、値ベースでの変更も可能です）  
@@ -58,7 +58,7 @@ updated: 2026-07-08
 ### ショートカット
 知っておくと便利なショートカットです。  
 <video controls playsinline preload="metadata" style="width: 100%; max-width: 960px; border-radius: 12px;">
-  <source src="../../assets/beginner/learn/operation-guide/operation-object-command.mp4">
+  <source src="../../assets/videos/beginner/learn/operation-guide/operation-object-command.mp4">
 </video>
 
 | 動作            | 操作方法     |
@@ -76,7 +76,7 @@ updated: 2026-07-08
 ### 星々の箱庭
 詳しくは星々の箱庭のページで記載しますが、とりあえずとっかかるための基本操作方法です。  
 <video controls playsinline preload="metadata" style="width: 100%; max-width: 960px; border-radius: 12px;">
-  <source src="../../assets/beginner/learn/operation-guide/operation-hakoniwa.mp4">
+  <source src="../../assets/videos/beginner/learn/operation-guide/operation-hakoniwa.mp4">
 </video>
 ホーム画面については、右クリックすればメニューが開いて、新規ノードグラフの作成や名前変更が出来、ダブルクリックで該当ノードグラフの編集画面に移行出来ます。  
 ノードグラフ編集画面では、右クリックでノード一覧を開き、そこから新規ノードを作成出来ます。  
