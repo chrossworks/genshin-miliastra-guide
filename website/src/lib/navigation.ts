@@ -43,15 +43,6 @@ export const breadcrumbLabelMap: Record<string, string> = {
 };
 
 export const articleSeries = {
-    "beginner":{
-        title: "初心者向け",
-
-        articles: [
-          "beginner/general-flow",
-          "beginner/basic-knowledge",
-        ],
-    },
-
     "beginner-build":{
         title: "作りながら学ぶ",
 
