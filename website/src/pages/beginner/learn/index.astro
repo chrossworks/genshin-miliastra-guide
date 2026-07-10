@@ -1,0 +1,37 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import ArticleCard from "../../../components/ArticleCard.astro";
+import { articleSeries } from "../../../lib/navigation";
+
+const series = articleSeries["beginner-learn"];
+
+const articles = (
+  await Promise.all(series.articles.map((slug) => getEntry("articles", slug)))
+).filter((article): article is NonNullable<typeof article> => article !== undefined);
+---
+
+<Layout title="知識から学ぶ">
+  <main class="page-container">
+    <h1>知識から学ぶ</h1>
+
+    <div class="article-grid">
+      {articles.map((article) => (
+        <ArticleCard article={article} />
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .page-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .article-grid {
+    display: grid;
+    gap: 1rem;
+  }
+</style>

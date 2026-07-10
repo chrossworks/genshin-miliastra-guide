@@ -1,23 +1,32 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 
-const articles = await getCollection("articles", ({ data }) => {
-  return data.category === "beginner" && data.published === true;
-});
+const learnPage = {
+  id: "beginner/learn",
+  data: {
+    title: "知識から学ぶ",
+    description: "基礎知識や操作方法を順番に学びたい方向けのガイドです。",
+    tags: [],
+  },
+};
 ---
 
-<Layout title="これから制作する方へ">
+<Layout title="初心者向け">
   <main class="page-container">
-    <h1>これから制作する方へ</h1>
-
-    <div class="article-grid">
-      {articles.map((article) => (
-        <ArticleCard article={article} />
-      ))}
-    </div>
-    <p>「操作方法」「基礎知識」等のページを現在作成中です。</p>
+    <h1>初心者向け</h1>
+    <p>
+    幻境の制作に慣れてない方向けに、2つの流れで基礎的な部分をご説明します。<br>
+    どちらか片方で基本的な部分はご理解いただけるとは思いますが、必要に応じてもう一つの方もご覧ください。
+    </p>
+    <ArticleCard article={learnPage} />
+    <p>
+    既に多少星々の幻境の制作に触れたことがあり、分からない点があったり、改めて説明して欲しいことがある方、ある程度頭に基礎知識を入れて自分で触ってみたい方は、「知識から学ぶ」をおすすめします。
+    </p>
+    <h3>作りながら学ぶ（現在制作中）</h3>
+    <p>
+    とりあえずチュートリアル的に触りながら覚えていきたい方は「作りながら学ぶ」をおすすめします。
+    </p>
   </main>
 </Layout>
 

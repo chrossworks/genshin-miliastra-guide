@@ -8,7 +8,8 @@ export const breadcrumbLabelMap: Record<string, string> = {
   "general-flow": "大まかな制作の流れ",
   "basic-knowledge": "基礎知識",
   "operation-guide": "操作方法",
-  "production-flow": "制作の進め方のススメ",
+  "editor-overview": "機能概要",
+  "recommended-flow": "制作の進め方のススメ",
 
   "tutorial-miliastra": "チュートリアルパルクール",
   coin: "コインのプレハブを作る",
@@ -43,6 +44,17 @@ export const breadcrumbLabelMap: Record<string, string> = {
 };
 
 export const articleSeries = {
+    "beginner-learn":{
+        title: "知識から学ぶ",
+
+        articles: [
+        "beginner/learn/general-flow",
+        "beginner/learn/basic-knowledge",
+        "beginner/learn/editor-overview",
+        "beginner/learn/operation-guide",
+        "beginner/learn/recommended-flow",
+        ],
+    },
     "beginner-build":{
         title: "作りながら学ぶ",
 
