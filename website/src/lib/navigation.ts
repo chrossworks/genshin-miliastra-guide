@@ -1,7 +1,7 @@
 export const breadcrumbLabelMap: Record<string, string> = {
   about: "このサイトについて",
 
-  beginner: "初心者",
+  beginner: "初心者向け",
   learn: "知識から学ぶ",
   build: "作りながら学ぶ",
 
@@ -39,6 +39,10 @@ export const breadcrumbLabelMap: Record<string, string> = {
 
   faq: "FAQ",
   examples: "制作実例",
+  "high-speed-run": "ハイスピードラン",
+  "mondstadt-style-auto-tour": "モンド風オートツアー",
+  "abyss-mage-maze": "魔術師の迷いの森",
+  "elemental-reaction-defense": "元素反応防衛戦",
   updates: "アップデート",
   columns: "コラム",
 };
@@ -68,6 +72,16 @@ export const articleSeries = {
         "beginner/build/timer",
         "beginner/build/ui",
         "beginner/build/settings",
+        ],
+    },
+    "examples":{
+        title: "制作実例",
+        
+        articles: [
+        "examples/high-speed-run",
+        "examples/mondstadt-style-auto-tour",
+        "examples/abyss-mage-maze",
+        "examples/elemental-reaction-defense",
         ],
     },
 };

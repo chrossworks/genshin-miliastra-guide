@@ -1,18 +1,28 @@
 ---
-import { getCollection } from "astro:content";
+import { getEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
+import { articleSeries } from "../../lib/navigation";
 
-const articles = await getCollection("articles", ({ data }) => {
-  return data.category === "beginner" && data.published === true;
-});
+const series = articleSeries["examples"];
+
+const articles = (
+  await Promise.all(series.articles.map((slug) => getEntry("articles", slug)))
+).filter((article): article is NonNullable<typeof article> => article !== undefined);
 ---
 
 <Layout title="制作実例紹介">
   <main class="page-container">
     <h1>制作実例紹介</h1>
-
-    <p>筆者が実際に制作した幻境の作り方の紹介等を記載していきます。<br>現在鋭意制作中ですので、今しばらくお待ちください。</p>
+    <p>
+    筆者が実際に制作した幻境の作り方の紹介等を記載していきます。<br>
+    現在概要のみ記載しており、詳細別途記載予定ですので、今しばらくお待ちください。
+    </p>
+    <div class="article-grid">
+      {articles.map((article) => (
+        <ArticleCard article={article} />
+      ))}
+    </div>
   </main>
 </Layout>
 
