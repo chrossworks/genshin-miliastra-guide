@@ -20,11 +20,6 @@ const articles = await getCollection("articles", ({ data }) => {
     <h1>アップデート内容</h1>
 
     <p>アップデートによって追加された機能等について記載していきます。<br>現在鋭意制作中ですので、今しばらくお待ちください。</p>
-    <div class="article-grid">
-      {articles.map((article) => (
-        <ArticleCard article={article} />
-      ))}
-    </div>
   </main>
 </Layout>
 
